@@ -1,0 +1,4 @@
+paramiko>=3.0.0
+PyYAML>=6.0
+py7zr>=1.0.0
+rarfile>=4.2

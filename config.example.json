@@ -1,0 +1,50 @@
+{
+  "nas": {
+    "protocol": "sftp",
+    "host": "192.168.1.100",
+    "port": 22,
+    "username": "nas_user",
+    "password": "your_password",
+    "private_key_path": null,
+    "private_key_passphrase": null,
+    "implicit_tls": false,
+    "remote_dir": "/data",
+    "timeout_seconds": 30
+  },
+  "patterns": {
+    "folder_patterns": [
+      "update"
+    ],
+    "file_patterns": [
+      "*.zip",
+      "*.7z",
+      "*.xlsx",
+      "*.pdf"
+    ],
+    "case_sensitive": false
+  },
+  "local": {
+    "download_dir": "./downloads",
+    "state_file": "./state.json",
+    "log_file": "./logs/nas_sync.log",
+    "log_level": "INFO",
+    "extract_to_subfolder": true,
+    "keep_archive_after_extract": false
+  },
+  "concurrency": {
+    "stability_wait_seconds": 5,
+    "ignore_extensions": [
+      ".part",
+      ".tmp",
+      ".filepart",
+      ".downloading"
+    ]
+  },
+  "scheduler": {
+    "interval_seconds": 300
+  },
+  "integration": {
+    "webhook_url": null,
+    "manifest_file": "./latest_sync_manifest.json"
+  }
+}
